@@ -11,10 +11,12 @@ The first thing we'll do as part of our application is to set up the virtual env
 `conda create --name myEnv`
 
 Now activet the environment:
+
 `activate myEnv`
 
 ### Installing the Django Application
-Inside the projects folder, install the necessary requirements
+Inside the projects folder, install the necessary requirements:
+
 `pip install -r requirements.txt`
 
 ## Running the Application
@@ -25,10 +27,12 @@ Inside the projects folder, install the necessary requirements
 Migrations are Django’s way of propagating changes you make to your models (like adding a field, deleting a model, etc.)
 into your database schema. Now that we have a rich model in place, we need to tell the database to create the relevant schema.
 In your console, run this:
+
 `python manage.py migrate`
 
 ### Run Server
 We'll run our server the django way with the runserver command:
+
 `python manage.py runserver`
 
 Enter the server specified URL (http://127.0.0.1:8000/api) in your browser.
