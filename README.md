@@ -9,11 +9,13 @@ These instructions will get you a copy of the project up and running on your loc
 The first thing we'll do as part of our application is to set up the virtual environment. Enter the following commands in your Terminal:
 
 `conda create --name myEnv`
+
+Now activet the environment:
 `activate myEnv`
 
 ### Installing the Django Application
 Inside the projects folder, install the necessary requirements
-`pip install -r reuirements.txt`
+`pip install -r requirements.txt`
 
 ## Running the Application
 ### Switch to project location
