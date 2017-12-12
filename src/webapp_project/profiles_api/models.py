@@ -4,6 +4,7 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 # Create your models here.
+
 class UserProfileManager(BaseUserManager):
     """Helps Django work with our custom user model."""
 
@@ -61,3 +62,19 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         """Django uses this when it needs to convert the object to a string"""
 
         return self.email
+
+
+class ProfileUploadFile(models.Model):
+    """Profile upload file."""
+
+    user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    file_desc = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    image = models.ImageField(upload_to='images/', default='images/None/no-img.jpg')
+    datafile = models.ImageField(upload_to='data/', default='data/None/no-data.mp4')
+
+    def __str__(self):
+        """Return the model as a string."""
+
+        return self.file_desc

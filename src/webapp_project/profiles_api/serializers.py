@@ -22,3 +22,15 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class ProfileUploadFileSerializer(serializers.ModelSerializer):
+    """A serializer for profile uploaded files."""
+
+    image = serializers.ImageField(max_length=None, use_url=True)
+    datafile = serializers.FileField(max_length=None, use_url=True)
+
+    class Meta:
+        model = models.ProfileUploadFile
+        fields = ('id', 'user_profile', 'file_desc', 'created_on', 'image', 'datafile')
+        extra_kwargs = {'user_profile': {'read_only': True}}
