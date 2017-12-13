@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Setting Up Your Virtual Environment
 The first thing we'll do as part of our application is to set up the virtual environment. Enter the following commands in your Terminal:
 
-`conda create --name myEnv`
+`conda create --name myEnv django`
 
 Now activet the environment:
 
